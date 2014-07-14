@@ -55,18 +55,18 @@ public:
 class FinanceToolFactory 
 {
 public:
-    virtual ShippingFee* calculateShippingFee () = 0;
-    virtual Tax* calculateTax () = 0;
+    virtual ShippingFee* calculateShippingFee() = 0;
+    virtual Tax* calculateTax() = 0;
 };
 
 // Concrete factory: country - Europe
 class EuropeFinanceFactory : public FinanceToolFactory 
 {
 public:
-    ShippingFee* calculateShippingFee (){
+    ShippingFee* calculateShippingFee(){
         return new EuropeShippingFee;
     }
-    Tax* calculateTax (){
+    Tax* calculateTax(){
         return new EuropeTax;
     }
 };
@@ -76,10 +76,10 @@ public:
 class SingaporeFinanceFactory : public FinanceToolFactory 
 {
 public:
-    ShippingFee* calculateShippingFee (){
+    ShippingFee* calculateShippingFee(){
         return new SingaporeShippingFee;
     }
-    Tax* calculateTax (){
+    Tax* calculateTax(){
         return new SingaporeTax;
     }
 };
