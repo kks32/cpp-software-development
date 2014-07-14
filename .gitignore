@@ -15,7 +15,7 @@ config.status
 autom4te.cache/*
 configure.scan
 .DS_Store*
-*.o*
+*.o
 *~
 *.hpp~
 *.ipp~
