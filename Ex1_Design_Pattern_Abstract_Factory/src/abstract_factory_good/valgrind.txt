@@ -1,0 +1,74 @@
+==8669== Memcheck, a memory error detector
+==8669== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==8669== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==8669== Command: ./factory Europe 2
+==8669== 
+--8669-- Valgrind options:
+--8669--    --leak-check=full
+--8669--    -v
+--8669-- Contents of /proc/version:
+--8669--   Linux version 3.15.4-200.fc20.x86_64 (mockbuild@bkernel02.phx2.fedoraproject.org) (gcc version 4.8.3 20140624 (Red Hat 4.8.3-1) (GCC) ) #1 SMP Mon Jul 7 14:24:41 UTC 2014
+--8669-- Arch and hwcaps: AMD64, amd64-cx16-sse3
+--8669-- Page sizes: currently 4096, max supported 4096
+--8669-- Valgrind library directory: /usr/lib64/valgrind
+--8669-- Reading syms from /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory_good/factory
+--8669-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--8669--    object doesn't have a symbol table
+--8669--    object doesn't have a dynamic symbol table
+--8669-- Reading syms from /usr/lib64/ld-2.18.so
+--8669-- Scheduler: using generic scheduler lock implementation.
+--8669-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==8669== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8669-by-krishna-on-kks32
+==8669== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8669-by-krishna-on-kks32
+==8669== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8669-by-krishna-on-kks32
+==8669== 
+==8669== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8669== don't want to do, unless you know exactly what you're doing,
+==8669== or are doing some strange experiment):
+==8669==   /usr/lib64/valgrind/../../bin/vgdb --pid=8669 ...command...
+==8669== 
+==8669== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8669==   /path/to/gdb ./factory
+==8669== and then give GDB the following command
+==8669==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=8669
+==8669== --pid is optional if only one valgrind process is running
+==8669== 
+--8669-- REDIR: 0x3cfdc18430 (strlen) redirected to 0x38067461 (???)
+--8669-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--8669--    object doesn't have a symbol table
+--8669-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--8669--    object doesn't have a symbol table
+--8669-- REDIR: 0x3cfdc18380 (index) redirected to 0x4a08f60 (index)
+--8669-- REDIR: 0x3cfdc18400 (strcmp) redirected to 0x4a0a040 (strcmp)
+--8669-- Reading syms from /usr/lib64/libstdc++.so.6.0.19
+--8669--    object doesn't have a symbol table
+--8669-- Reading syms from /usr/lib64/libm-2.18.so
+--8669-- Reading syms from /usr/lib64/libgcc_s-4.8.3-20140624.so.1
+--8669--    object doesn't have a symbol table
+--8669-- Reading syms from /usr/lib64/libc-2.18.so
+--8669-- REDIR: 0x3cfe089b90 (strcasecmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe08be80 (strncasecmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe089360 (memcpy@GLIBC_2.2.5) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe088340 (__GI_strrchr) redirected to 0x4a08d80 (__GI_strrchr)
+--8669-- REDIR: 0x3cfe0865f0 (strlen) redirected to 0x4a092f0 (strlen)
+--8669-- REDIR: 0x3cfe084b90 (strcmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe13c200 (__strcmp_ssse3) redirected to 0x4a09fa0 (strcmp)
+Incorrect number of arguments--8669-- REDIR: 0x3cfe08e560 (memcpy@@GLIBC_2.14) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe093f20 (__memcpy_sse2_unaligned) redirected to 0x4a0a390 (memcpy@@GLIBC_2.14)
+--8669-- REDIR: 0x3cfe088d90 (bcmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8669-- REDIR: 0x3cfe15c060 (__memcmp_sse4_1) redirected to 0x4a0b1e0 (bcmp)
+
+Usage: ./factory countryname
+--8669-- REDIR: 0x3cfe080330 (free) redirected to 0x4a074f0 (free)
+==8669== 
+==8669== HEAP SUMMARY:
+==8669==     in use at exit: 0 bytes in 0 blocks
+==8669==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==8669== 
+==8669== All heap blocks were freed -- no leaks are possible
+==8669== 
+==8669== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+--8669-- 
+--8669-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a /usr/lib64/valgrind/default.supp:1286
+==8669== 
+==8669== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)

@@ -1,0 +1,97 @@
+==8753== Memcheck, a memory error detector
+==8753== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==8753== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==8753== Command: ./factory 2
+==8753== 
+--8753-- Valgrind options:
+--8753--    --leak-check=full
+--8753--    -v
+--8753-- Contents of /proc/version:
+--8753--   Linux version 3.15.4-200.fc20.x86_64 (mockbuild@bkernel02.phx2.fedoraproject.org) (gcc version 4.8.3 20140624 (Red Hat 4.8.3-1) (GCC) ) #1 SMP Mon Jul 7 14:24:41 UTC 2014
+--8753-- Arch and hwcaps: AMD64, amd64-cx16-sse3
+--8753-- Page sizes: currently 4096, max supported 4096
+--8753-- Valgrind library directory: /usr/lib64/valgrind
+--8753-- Reading syms from /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory
+--8753-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--8753--    object doesn't have a symbol table
+--8753--    object doesn't have a dynamic symbol table
+--8753-- Reading syms from /usr/lib64/ld-2.18.so
+--8753-- Scheduler: using generic scheduler lock implementation.
+--8753-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==8753== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8753-by-krishna-on-kks32
+==8753== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8753-by-krishna-on-kks32
+==8753== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8753-by-krishna-on-kks32
+==8753== 
+==8753== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8753== don't want to do, unless you know exactly what you're doing,
+==8753== or are doing some strange experiment):
+==8753==   /usr/lib64/valgrind/../../bin/vgdb --pid=8753 ...command...
+==8753== 
+==8753== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8753==   /path/to/gdb ./factory
+==8753== and then give GDB the following command
+==8753==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=8753
+==8753== --pid is optional if only one valgrind process is running
+==8753== 
+--8753-- REDIR: 0x3cfdc18430 (strlen) redirected to 0x38067461 (???)
+--8753-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--8753--    object doesn't have a symbol table
+--8753-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--8753--    object doesn't have a symbol table
+--8753-- REDIR: 0x3cfdc18380 (index) redirected to 0x4a08f60 (index)
+--8753-- REDIR: 0x3cfdc18400 (strcmp) redirected to 0x4a0a040 (strcmp)
+--8753-- Reading syms from /usr/lib64/libstdc++.so.6.0.19
+--8753--    object doesn't have a symbol table
+--8753-- Reading syms from /usr/lib64/libm-2.18.so
+--8753-- Reading syms from /usr/lib64/libgcc_s-4.8.3-20140624.so.1
+--8753--    object doesn't have a symbol table
+--8753-- Reading syms from /usr/lib64/libc-2.18.so
+--8753-- REDIR: 0x3cfe089b90 (strcasecmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe08be80 (strncasecmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe089360 (memcpy@GLIBC_2.2.5) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe088340 (__GI_strrchr) redirected to 0x4a08d80 (__GI_strrchr)
+--8753-- REDIR: 0x3cfe0865f0 (strlen) redirected to 0x4a092f0 (strlen)
+--8753-- REDIR: 0x3cfe084b90 (strcmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe13c200 (__strcmp_ssse3) redirected to 0x4a09fa0 (strcmp)
+--8753-- REDIR: 0x336585f630 (operator new(unsigned long)) redirected to 0x4a068de (operator new(unsigned long))
+--8753-- REDIR: 0x3cfe08e560 (memcpy@@GLIBC_2.14) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe093f20 (__memcpy_sse2_unaligned) redirected to 0x4a0a390 (memcpy@@GLIBC_2.14)
+--8753-- REDIR: 0x3cfe088d90 (bcmp) redirected to 0x4801716 (_vgnU_ifunc_wrapper)
+--8753-- REDIR: 0x3cfe15c060 (__memcmp_sse4_1) redirected to 0x4a0b1e0 (bcmp)
+Singapore ShippingFee $39.99
+Singapore Tax $19.99
+--8753-- REDIR: 0x3cfe080330 (free) redirected to 0x4a074f0 (free)
+==8753== 
+==8753== HEAP SUMMARY:
+==8753==     in use at exit: 24 bytes in 3 blocks
+==8753==   total heap usage: 3 allocs, 0 frees, 24 bytes allocated
+==8753== 
+==8753== Searching for pointers to 3 not-freed blocks
+==8753== Checked 186,680 bytes
+==8753== 
+==8753== 8 bytes in 1 blocks are definitely lost in loss record 1 of 3
+==8753==    at 0x4A06965: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8753==    by 0x400A02: main (in /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory)
+==8753== 
+==8753== 8 bytes in 1 blocks are definitely lost in loss record 2 of 3
+==8753==    at 0x4A06965: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8753==    by 0x400B84: SingaporeFinanceFactory::calculateShippingFee() (in /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory)
+==8753==    by 0x400A24: main (in /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory)
+==8753== 
+==8753== 8 bytes in 1 blocks are definitely lost in loss record 3 of 3
+==8753==    at 0x4A06965: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8753==    by 0x400BD6: SingaporeFinanceFactory::calculateTax() (in /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory)
+==8753==    by 0x400A52: main (in /home/krishna/Development/cpp-tutorials/Ex1_Design_Pattern_Abstract_Factory/src/abstract_factory/factory)
+==8753== 
+==8753== LEAK SUMMARY:
+==8753==    definitely lost: 24 bytes in 3 blocks
+==8753==    indirectly lost: 0 bytes in 0 blocks
+==8753==      possibly lost: 0 bytes in 0 blocks
+==8753==    still reachable: 0 bytes in 0 blocks
+==8753==         suppressed: 0 bytes in 0 blocks
+==8753== 
+==8753== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
+--8753-- 
+--8753-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a /usr/lib64/valgrind/default.supp:1286
+==8753== 
+==8753== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
