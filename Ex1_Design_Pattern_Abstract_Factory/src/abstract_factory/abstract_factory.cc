@@ -13,7 +13,7 @@ public:
 class EuropeShippingFee : public ShippingFee 
 {
 public:
-    void compute (){
+    void compute(){
         std::cout << "Europe ShippingFee: $4.99" << std::endl;
     }
 };
@@ -22,7 +22,7 @@ public:
 class SingaporeShippingFee : public ShippingFee 
 {
 public:
-    void compute (){
+    void compute(){
         std::cout << "Singapore ShippingFee $39.99" << std::endl;
     }
 };
@@ -38,7 +38,7 @@ public:
 class EuropeTax : public Tax 
 {
 public:
-    void compute (){
+    void compute(){
         std::cout << "Europe Tax: $49.99" << std::endl;
     }
 };
@@ -46,7 +46,7 @@ public:
 // Concrete Product: Singapore Tax Fee
 class SingaporeTax : public Tax {
 public:
-    void compute (){
+    void compute(){
         std::cout << "Singapore Tax $19.99" << std::endl;
     }
 };

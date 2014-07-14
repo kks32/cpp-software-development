@@ -7,13 +7,15 @@ class ShippingFee
 {
 public:
     virtual void compute() = 0;
+    virtual ~ShippingFee(){}
 };
  
 // Concrete Product: Europe Shipping Fee
 class EuropeShippingFee : public ShippingFee 
 {
 public:
-    void compute (){
+    virtual ~EuropeShippingFee(){}
+    void compute(){
         std::cout << "Europe ShippingFee: $4.99" << std::endl;
     }
 };
@@ -22,7 +24,8 @@ public:
 class SingaporeShippingFee : public ShippingFee 
 {
 public:
-    void compute (){
+    virtual ~SingaporeShippingFee(){}
+    void compute(){
         std::cout << "Singapore ShippingFee $39.99" << std::endl;
     }
 };
@@ -32,13 +35,15 @@ class Tax
 {
 public:
     virtual void compute() = 0;
+    virtual ~Tax(){}
 };
 
 // Concrete Product: Europe Tax Fee
 class EuropeTax : public Tax 
 {
 public:
-    void compute (){
+    virtual ~EuropeTax(){}
+    void compute(){
         std::cout << "Europe Tax: $49.99" << std::endl;
     }
 };
@@ -46,7 +51,8 @@ public:
 // Concrete Product: Singapore Tax Fee
 class SingaporeTax : public Tax {
 public:
-    void compute (){
+    virtual ~SingaporeTax(){}
+    void compute(){
         std::cout << "Singapore Tax $19.99" << std::endl;
     }
 };
@@ -55,12 +61,13 @@ public:
 class FinanceToolFactory 
 {
 public:
+    virtual ~FinanceToolFactory(){}
     enum FinanceFactories {
         Europe,
         Singapore
     };
-    virtual ShippingFee* calculateShippingFee () = 0;
-    virtual Tax* calculateTax () = 0;
+    virtual ShippingFee* calculateShippingFee() = 0;
+    virtual Tax* calculateTax() = 0;
     
     static FinanceToolFactory* createFactory(std::string& country);
 };
@@ -69,6 +76,7 @@ public:
 class EuropeFinanceFactory : public FinanceToolFactory 
 {
 public:
+    virtual ~EuropeFinanceFactory(){}
     ShippingFee* calculateShippingFee (){
         return new EuropeShippingFee;
     }
@@ -81,10 +89,11 @@ public:
 class SingaporeFinanceFactory : public FinanceToolFactory 
 {
 public:
-    ShippingFee* calculateShippingFee (){
+    virtual ~SingaporeFinanceFactory(){}
+    ShippingFee* calculateShippingFee(){
         return new SingaporeShippingFee;
     }
-    Tax* calculateTax (){
+    Tax* calculateTax(){
         return new SingaporeTax;
     }
 };
@@ -107,27 +116,22 @@ FinanceToolFactory* FinanceToolFactory::createFactory(std::string& country) {
 // Client side implementation 
 int main(int argc, char* argv[]) {
 
-    FinanceToolFactory* finance_factory;
-    ShippingFee* ship_fee;
-    Tax* tax;
-
     // User input
     if (argc != 2) {
         std::cerr << "Incorrect number of arguments" << std::endl;
-        std::cerr << "Usage: ./factory countryname" << std::endl;
+        std::cerr << "Usage: ./factory countryname  (Europe/Singapore)" << std::endl;
         std::exit(EXIT_FAILURE);
     }
     std::string countryname = argv[1];
 
 
-    finance_factory = FinanceToolFactory::createFactory(countryname);
-    ship_fee = finance_factory->calculateShippingFee();
+    FinanceToolFactory* finance_factory = FinanceToolFactory::createFactory(countryname);
+    ShippingFee* ship_fee = finance_factory->calculateShippingFee();
     ship_fee -> compute();
     delete ship_fee;
-    tax = finance_factory->calculateTax();
+    Tax* tax = finance_factory->calculateTax();
     tax -> compute();
     delete tax;
     delete finance_factory;
- 
     return 0;
 }
