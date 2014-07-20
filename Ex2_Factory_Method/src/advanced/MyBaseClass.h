@@ -5,6 +5,7 @@ class MyBaseClass
 {
 public:
     virtual void info() = 0;
+    virtual void schedule() = 0;
 };
 
 #endif // CPPFACTORY_MYBASECLASS_H

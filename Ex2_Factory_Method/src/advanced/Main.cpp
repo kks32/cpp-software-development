@@ -18,6 +18,7 @@ int main(int argc, char** argv)
     auto mycourse = MyFactory::Instance()->Create(coursename);
     
     mycourse->info();
+    mycourse->schedule();
 
     return 0;
 }
