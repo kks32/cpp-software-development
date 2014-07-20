@@ -1,7 +1,7 @@
 #ifndef _JAVA_H_
 #define _JAVA_H_
 
-#include "MyBaseClass.h"
+#include "course.h"
 #include <iostream>
 
 class Java : public MyBaseClass

@@ -1,7 +1,7 @@
 #ifndef _CPP_H_
 #define _CPP_H_
 
-#include "MyBaseClass.h"
+#include "course.h"
 #include <iostream>
 
 class Cpp : public MyBaseClass

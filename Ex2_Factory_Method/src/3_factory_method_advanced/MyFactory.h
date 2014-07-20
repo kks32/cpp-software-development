@@ -1,7 +1,7 @@
 #ifndef CPPFACTORY_MYFACTORY_H
 #define CPPFACTORY_MYFACTORY_H
 
-#include "MyBaseClass.h"
+#include "course.h"
 
 #include <memory>
 #include <string>
