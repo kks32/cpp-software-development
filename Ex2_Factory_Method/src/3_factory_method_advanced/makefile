@@ -4,7 +4,7 @@ BIN_NAME := factory-advanced
 # Compiler used
 CXX ?= g++
 # Extension of source files used in the project
-SRC_EXT = cc
+SRC_EXT = cpp
 # Path to the source directory, relative to the makefile
 SRC_PATH = .
 # General compiler flags
