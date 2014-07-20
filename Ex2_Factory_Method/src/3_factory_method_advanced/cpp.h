@@ -4,7 +4,7 @@
 #include "course.h"
 #include <iostream>
 
-class Cpp : public MyBaseClass
+class Cpp : public Course
 {
 public:
     Cpp(){};

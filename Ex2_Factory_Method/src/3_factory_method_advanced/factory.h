@@ -13,11 +13,11 @@
 // A helper class to register a factory function
 class Registrar {
 public:
-    Registrar(std::string className, std::function<MyBaseClass*(void)> classFactoryFunction);
+    Registrar(std::string className, std::function<Course*(void)> classFactoryFunction);
 };
 
 // A preprocessor define used by derived classes
-#define REGISTER_CLASS(NAME, TYPE) static Registrar registrar(NAME, [](void) -> MyBaseClass * { return new TYPE();});
+#define REGISTER_CLASS(NAME, TYPE) static Registrar registrar(NAME, [](void) -> Course * { return new TYPE();});
 
 // The factory - implements singleton pattern!
 class MyCourseFactory
@@ -27,17 +27,17 @@ public:
     static MyCourseFactory * Instance();
 
     // register a factory function to create an instance of className
-    void RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction);
+    void RegisterFactoryFunction(std::string name, std::function<Course*(void)> classFactoryFunction);
 
     // create an instance of a registered class
-    std::shared_ptr<MyBaseClass> Create(std::string name);
+    std::shared_ptr<Course> Create(std::string name);
 
 private:
     // a private ctor
     MyCourseFactory(){}
 
     // the registry of factory functions
-    std::map<std::string, std::function<MyBaseClass*(void)>> factoryFunctionRegistry;
+    std::map<std::string, std::function<Course*(void)>> factoryFunctionRegistry;
 
 };
 

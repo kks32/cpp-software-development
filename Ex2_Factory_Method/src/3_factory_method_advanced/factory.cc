@@ -3,7 +3,7 @@
 
 
 
-Registrar::Registrar(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction)
+Registrar::Registrar(std::string name, std::function<Course*(void)> classFactoryFunction)
 {
     // register the class factory function
     MyCourseFactory::Instance()->RegisterFactoryFunction(name, classFactoryFunction);
@@ -17,16 +17,16 @@ MyCourseFactory * MyCourseFactory::Instance()
 }
 
 
-void MyCourseFactory::RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction)
+void MyCourseFactory::RegisterFactoryFunction(std::string name, std::function<Course*(void)> classFactoryFunction)
 {
     // register the class factory function 
     factoryFunctionRegistry[name] = classFactoryFunction;
 }
 
 
-std::shared_ptr<MyBaseClass> MyCourseFactory::Create(std::string name)
+std::shared_ptr<Course> MyCourseFactory::Create(std::string name)
 {
-    MyBaseClass * instance = nullptr;
+    Course * instance = nullptr;
 
     // find name in the registry and call factory method.
     auto it = factoryFunctionRegistry.find(name);
@@ -35,7 +35,7 @@ std::shared_ptr<MyBaseClass> MyCourseFactory::Create(std::string name)
     
     // wrap instance in a shared ptr and return
     if(instance != nullptr)
-        return std::shared_ptr<MyBaseClass>(instance);
+        return std::shared_ptr<Course>(instance);
     else
         return nullptr;
 }

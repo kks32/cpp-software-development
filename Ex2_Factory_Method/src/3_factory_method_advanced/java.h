@@ -4,7 +4,7 @@
 #include "course.h"
 #include <iostream>
 
-class Java : public MyBaseClass
+class Java : public Course
 {
 public:    
     Java(){};

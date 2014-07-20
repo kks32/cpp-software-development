@@ -1,7 +1,7 @@
 #ifndef _COURSE_H_
 #define _COURSE_H_
 
-class MyBaseClass
+class Course
 {
 public:
     virtual void info() = 0;
