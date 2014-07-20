@@ -1,4 +1,4 @@
 #include "cpp.h"
-#include "MyFactory.h"
+#include "factory.h"
 
 REGISTER_CLASS("C++", Cpp);

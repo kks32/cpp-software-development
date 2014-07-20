@@ -1,5 +1,5 @@
-#ifndef CPPFACTORY_MYFACTORY_H
-#define CPPFACTORY_MYFACTORY_H
+#ifndef _FACTORY_H_
+#define _FACTORY_H_
 
 #include "course.h"
 
@@ -41,4 +41,4 @@ private:
 
 };
 
-#endif // CPPFACTORY_MYFACTORY_H
+#endif // _FACTORY_H_

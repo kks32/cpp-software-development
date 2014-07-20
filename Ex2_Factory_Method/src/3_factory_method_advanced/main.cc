@@ -1,4 +1,4 @@
-#include "MyFactory.h"
+#include "factory.h"
 
 #include <cstdlib>
 #include <iostream>

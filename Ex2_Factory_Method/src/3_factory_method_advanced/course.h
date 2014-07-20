@@ -1,5 +1,5 @@
-#ifndef CPPFACTORY_MYBASECLASS_H
-#define CPPFACTORY_MYBASECLASS_H
+#ifndef _COURSE_H_
+#define _COURSE_H_
 
 class MyBaseClass
 {
@@ -8,4 +8,4 @@ public:
     virtual void schedule() = 0;
 };
 
-#endif // CPPFACTORY_MYBASECLASS_H
+#endif //  _COURSE_H_
