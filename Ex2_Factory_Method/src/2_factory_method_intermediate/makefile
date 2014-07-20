@@ -1,10 +1,10 @@
 #### PROJECT SETTINGS ####
 # The name of the executable to be created
-BIN_NAME := factory-advanced
+BIN_NAME := factory
 # Compiler used
 CXX ?= g++
 # Extension of source files used in the project
-SRC_EXT = cpp
+SRC_EXT = cc
 # Path to the source directory, relative to the makefile
 SRC_PATH = .
 # General compiler flags
