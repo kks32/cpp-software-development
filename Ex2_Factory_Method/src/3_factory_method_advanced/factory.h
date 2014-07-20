@@ -8,12 +8,12 @@
 #include <map>
 #include <functional>
 
-using namespace std;
+//using namespace std;
 
 // A helper class to register a factory function
 class Registrar {
 public:
-    Registrar(string className, function<MyBaseClass*(void)> classFactoryFunction);
+    Registrar(std::string className, std::function<MyBaseClass*(void)> classFactoryFunction);
 };
 
 // A preprocessor define used by derived classes
@@ -27,17 +27,17 @@ public:
     static MyFactory * Instance();
 
     // register a factory function to create an instance of className
-    void RegisterFactoryFunction(string name, function<MyBaseClass*(void)> classFactoryFunction);
+    void RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction);
 
     // create an instance of a registered class
-    shared_ptr<MyBaseClass> Create(string name);
+    std::shared_ptr<MyBaseClass> Create(std::string name);
 
 private:
     // a private ctor
     MyFactory(){}
 
     // the registry of factory functions
-    map<string, function<MyBaseClass*(void)>> factoryFunctionRegistry;
+    std::map<std::string, std::function<MyBaseClass*(void)>> factoryFunctionRegistry;
 
 };
 
