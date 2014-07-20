@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 
-
+// Client-side implementation
 int main(int argc, char** argv)
 {
 

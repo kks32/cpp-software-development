@@ -2,13 +2,13 @@
 
 
 
-
 Registrar::Registrar(std::string name, std::function<Course*(void)> classFactoryFunction)
 {
     // register the class factory function
     MyCourseFactory::Instance()->RegisterFactoryFunction(name, classFactoryFunction);
 }
 
+// Abstract Course Factory
 
 MyCourseFactory * MyCourseFactory::Instance()
 {
