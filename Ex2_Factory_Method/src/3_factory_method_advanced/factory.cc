@@ -6,25 +6,25 @@
 Registrar::Registrar(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction)
 {
     // register the class factory function
-    MyFactory::Instance()->RegisterFactoryFunction(name, classFactoryFunction);
+    MyCourseFactory::Instance()->RegisterFactoryFunction(name, classFactoryFunction);
 }
 
 
-MyFactory * MyFactory::Instance()
+MyCourseFactory * MyCourseFactory::Instance()
 {
-    static MyFactory factory;
+    static MyCourseFactory factory;
     return &factory;
 }
 
 
-void MyFactory::RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction)
+void MyCourseFactory::RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction)
 {
     // register the class factory function 
     factoryFunctionRegistry[name] = classFactoryFunction;
 }
 
 
-std::shared_ptr<MyBaseClass> MyFactory::Create(std::string name)
+std::shared_ptr<MyBaseClass> MyCourseFactory::Create(std::string name)
 {
     MyBaseClass * instance = nullptr;
 

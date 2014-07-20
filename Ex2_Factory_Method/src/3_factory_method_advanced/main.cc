@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     }
     std::string coursename = argv[1];
 
-    auto mycourse = MyFactory::Instance()->Create(coursename);
+    auto mycourse = MyCourseFactory::Instance()->Create(coursename);
     
     mycourse->info();
     mycourse->schedule();

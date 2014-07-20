@@ -20,11 +20,11 @@ public:
 #define REGISTER_CLASS(NAME, TYPE) static Registrar registrar(NAME, [](void) -> MyBaseClass * { return new TYPE();});
 
 // The factory - implements singleton pattern!
-class MyFactory
+class MyCourseFactory
 {
 public:
     // Get the single instance of the factory
-    static MyFactory * Instance();
+    static MyCourseFactory * Instance();
 
     // register a factory function to create an instance of className
     void RegisterFactoryFunction(std::string name, std::function<MyBaseClass*(void)> classFactoryFunction);
@@ -34,7 +34,7 @@ public:
 
 private:
     // a private ctor
-    MyFactory(){}
+    MyCourseFactory(){}
 
     // the registry of factory functions
     std::map<std::string, std::function<MyBaseClass*(void)>> factoryFunctionRegistry;
