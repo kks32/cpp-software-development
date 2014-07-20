@@ -1,14 +1,14 @@
-#ifndef CPPFACTORY_DERIVEDCLASSONE_H
-#define CPPFACTORY_DERIVEDCLASSONE_H
+#ifndef _CPP_H_
+#define _CPP_H_
 
 #include "MyBaseClass.h"
 #include <iostream>
 
-class DerivedClassOne : public MyBaseClass
+class Cpp : public MyBaseClass
 {
 public:
-    DerivedClassOne(){};
-    virtual ~DerivedClassOne(){};
+    Cpp(){};
+    virtual ~Cpp(){};
 
     virtual void info() {
         std::cout << "C++ course" << std::endl; 
@@ -19,4 +19,4 @@ public:
         std::cout << "C++ schedule" << std::endl; 
     }
 };
-#endif // CPPFACTORY_DERIVEDCLASSONE_H
+#endif //  _CPP_H_
