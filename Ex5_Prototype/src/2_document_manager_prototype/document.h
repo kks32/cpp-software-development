@@ -42,17 +42,17 @@ public:
     void view_document();
 };
 
-//La fabrique à proprement parler
+// Document Factory
 class DocumentFactory 
 {
 public:
     static std::map<std::string,Document*> m_map;
     
 public:
-    //Fonction qui associe clé <=> prototype
+    // Function that combines 'key' <=> prototype
     static void Register(const std::string& key,Document* obj);
     
-    //Celle qui va créer les objets
+    // This creates the objects
     Document* Create(const std::string& key) const;
 };
 #endif // _DOCUMENT_H_
