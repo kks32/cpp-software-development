@@ -17,6 +17,7 @@ class Document : public  Prototype<Document>
 {
 public: 
     virtual void view_document()=0;
+    virtual ~Document(){};
 };
 
 class XmlDoc : public Document 
@@ -24,6 +25,7 @@ class XmlDoc : public Document
 public:
     Document* Clone() const;
     void view_document();
+    virtual ~XmlDoc(){};
     
 };
 
@@ -33,6 +35,7 @@ class PlainDoc : public Document
 public:
     Document* Clone() const ;
     void view_document();
+    virtual ~PlainDoc(){};
 };
 
 class SpreadSheet : public Document 
@@ -40,6 +43,7 @@ class SpreadSheet : public Document
 public:
     Document* Clone() const ;
     void view_document();
+    virtual ~SpreadSheet(){};
 };
 
 

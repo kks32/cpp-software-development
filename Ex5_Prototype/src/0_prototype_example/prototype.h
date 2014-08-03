@@ -17,6 +17,9 @@ std::string m_host,m_login,m_pass;
 std::string m_base,m_table;
 public:
          MySQLManager(const std::string& host="",const std::string& login="",const std::string& pass="");
+
+         // const at the end of the function prevents 
+         // changing the member variables
          MySQLManager* Clone() const;
 
          void Display() const;
