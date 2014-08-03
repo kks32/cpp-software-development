@@ -1,3 +1,5 @@
+*.gch*
+*.release_time*
 bin*
 build*
 _site
@@ -10,7 +12,7 @@ Gemfile.lock
 *~*
 *#*
 Makefile
-*.a.out
+*.out*
 .deps/*
 config.log
 config.status
