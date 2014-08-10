@@ -5,32 +5,32 @@
 #include <string>
 
 // Prototype class
-template <class T> class Prototype 
+template <class T> class Prototype
 {
 public:
-    virtual ~Prototype(){}        
+    virtual ~Prototype(){}
     virtual T* Clone() const =0 ;
 };
 
 // Interface to document
 class Document : public  Prototype<Document>
 {
-public: 
+public:
     virtual void view_document()=0;
     virtual ~Document(){};
 };
 
-class XmlDoc : public Document 
+class XmlDoc : public Document
 {
 public:
     Document* Clone() const;
     void view_document();
     virtual ~XmlDoc(){};
-    
+
 };
 
 
-class PlainDoc : public Document 
+class PlainDoc : public Document
 {
 public:
     Document* Clone() const ;
@@ -38,7 +38,7 @@ public:
     virtual ~PlainDoc(){};
 };
 
-class SpreadSheet : public Document 
+class SpreadSheet : public Document
 {
 public:
     Document* Clone() const ;

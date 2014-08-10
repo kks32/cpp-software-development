@@ -13,16 +13,16 @@ Document* XmlDoc::Clone() const {
 void XmlDoc::view_document() {
     std::cout<<"A new XML document"<<std::endl;
 }
-        
-Document* PlainDoc::Clone() const { 
+
+Document* PlainDoc::Clone() const {
     return new PlainDoc(*this);
 }
 
 void PlainDoc::view_document() {
     std::cout<<"A new blank document"<<std::endl;
 }
-   
-Document* SpreadSheet::Clone() const { 
+
+Document* SpreadSheet::Clone() const {
     return new SpreadSheet(*this);
 }
 
@@ -41,22 +41,22 @@ template <class Object,class Key> void Factory<Object,Key>::Register(Key key,Obj
 template <class Object,class Key> Object* Factory<Object,Key>::Create (const Key& key) {
     Object* tmp=0;
     typename std::map<Key, Object*>::iterator it=m_map.find(key);
-    
+
     if(it!=m_map.end()) {
         tmp=((*it).second)->Clone();
     }
-    
+
     return tmp;
 }
 
 int main(int argc, char** argv) {
     // Document factory
     Factory<Document> documentfactory;
-    
+
     // Register the types
     Factory<Document>::Register("XML",new XmlDoc);
     Factory<Document>::Register("DOC",new PlainDoc);
-    Factory<Document>::Register("XLS",new SpreadSheet);
+    Factory<OnlineCourse>::Register("C++",new C++);
 
    // User input
     if (argc != 2) {
@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
     }
     std::string documenttype = argv[1];
 
-    
+
     // Objects are created via the factory
 
     Document* doc = documentfactory.Create(documenttype);
