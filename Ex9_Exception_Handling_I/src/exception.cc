@@ -19,9 +19,10 @@ int main ()
    try {
      z = division(x, y);
      cout << z << endl;
-   }catch (const char* msg) {
+  }catch (const char* msg) {
      cerr << msg << endl;
-   }
+  }
 
-   return 0;
+  std::cout << "Hello am I continuing?" << std::endl;
+  return 0;
 }
