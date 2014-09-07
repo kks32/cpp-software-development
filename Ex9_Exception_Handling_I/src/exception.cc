@@ -1,28 +1,31 @@
 #include <iostream>
 using namespace std;
 
-double division(int a, int b)
+double division(double a, double b)
 {
-   if( b == 0 )
+   if( b == 0. )
    {
-      throw "Division by zero condition!";
+      throw "\nDivision by zero condition!";
    }
    return (a/b);
 }
 
 int main ()
 {
-   int x = 50;
-   int y = 0;
-   double z = 0;
+   double x, y;
+   double z = 0.;
+   std::cout << "\nEnter the value of the numerator: ";
+   std::cin >> x;
+   std::cout << "\nEnter the value of the denominator: ";
+   std::cin >> y;
 
    try {
      z = division(x, y);
-     cout << z << endl;
+     cout << "The result is: " << z << endl;
   }catch (const char* msg) {
      cerr << msg << endl;
   }
 
-  std::cout << "Hello am I continuing?" << std::endl;
+  std::cout << "\nThe code continues after excpetion" << std::endl;
   return 0;
 }
