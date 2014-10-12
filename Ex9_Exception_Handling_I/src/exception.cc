@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 double division(double a, double b)
 {
@@ -21,9 +20,9 @@ int main ()
 
    try {
      z = division(x, y);
-     cout << "The result is: " << z << endl;
-  }catch (const char* msg) {
-     cerr << msg << endl;
+     std::cout << "The result is: " << z << std::endl;
+   }catch (const char* msg) {
+       std::cerr << msg << std::endl;
   }
 
   std::cout << "\nThe code continues after excpetion" << std::endl;
