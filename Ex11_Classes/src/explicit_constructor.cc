@@ -13,9 +13,9 @@ class complex {
     real = r;
     img = i;
   }
-  friend void display(complex cx);
+  friend void display(const complex& cx);
 };
-void display(complex cx) {
+void display(const complex& cx) {
   std::cout << " Real Part : "  << cx.real
             << " Imag Part : "  << cx.img << std::endl;
 }
