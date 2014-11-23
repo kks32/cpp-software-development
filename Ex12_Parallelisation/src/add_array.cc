@@ -5,9 +5,6 @@
 
 #include <iostream>
 
-
-
-
 int main(int argc, char** argv) {
 
   int N;
@@ -19,11 +16,8 @@ int main(int argc, char** argv) {
     N = atoi (argv[1]);
   }
 
-const int CHUNKSIZE = 5;
-//const int N = 20;
-
   int nthreads, tid, i, chunk;
-  chunk = CHUNKSIZE;
+  chunk = 10;
 
   float a[N], b[N], c[N];
 
@@ -39,7 +33,7 @@ const int CHUNKSIZE = 5;
     }
     printf("Thread %d starting...\n", tid);
 
-#pragma omp for schedule(dynamic, chunk)
+#pragma omp for schedule(dynamic, chunk) // change to static and see what happens
     for (i = 0; i < N; i++) {
       c[i] = a[i] + b[i];
       printf("Thread %d: c[%d]= %f\n", tid, i, c[i]);
