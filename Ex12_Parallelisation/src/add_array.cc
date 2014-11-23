@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
     }
     printf("Thread %d starting...\n", tid);
 
-#pragma omp for schedule(dynamic, chunk) // change to static and see what happens
+#pragma omp for schedule(dynamic, chunk) //change dynamic to static
     for (i = 0; i < N; i++) {
       c[i] = a[i] + b[i];
       printf("Thread %d: c[%d]= %f\n", tid, i, c[i]);
