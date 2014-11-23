@@ -9,10 +9,13 @@ int main(int argc, char* argv[]) {
   {
     // Obtain thread number
     tid = omp_get_thread_num();
+
+    // Using printf instead of cout
     printf("Hello World from thread = %d\n", tid);
 
     // Only master thread does this
     if (tid == 0) {
+      // get the number of threads
       nthreads = omp_get_num_threads();
       printf("Number of threads = %d\n", nthreads);
     }
