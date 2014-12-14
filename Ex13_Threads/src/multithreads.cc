@@ -7,8 +7,8 @@ static const int num_threads = 10;
 
 // This function will be called from a thread
 void hello_id(int id) {
-  std::cout << "ID: " << id << " Hello from thread "
-            << std::this_thread::get_id() << std::endl;
+  std::cout << std::this_thread::get_id() << std::endl;
+
 }
 
 int main() {

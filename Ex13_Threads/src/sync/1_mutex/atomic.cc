@@ -1,15 +1,18 @@
 #include <thread>
 #include <iostream>
 #include <vector>
+#include <atomic>
 
 class Counter {
-  int value_;
+  std::atomic<int> value_;
 
  public:
 
   Counter() : value_(0){}
 
-  void increment() { ++value_; }
+  void increment() {
+      ++value_;
+  }
   int value() { return value_; }
   void value(int& newvalue) { value_ = newvalue; }
 };

@@ -3,7 +3,7 @@
 #include <vector>
 #include <cstdlib>
 
-static const int num_threads = 10;
+static const int num_threads = 2;
 
 int main() {
   std::vector<std::thread> threads;
