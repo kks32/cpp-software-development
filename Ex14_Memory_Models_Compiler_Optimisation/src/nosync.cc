@@ -8,7 +8,7 @@ pthread_mutex_t myMutex;
 void* mutex_testing(int* param) {
   int i;
   for (i = 0; i < 5; i++) {
-    counter++;
+    ++counter;
     usleep(1); // simulate some process
     printf("thread %d counter = %d\n", (int)param, counter);
   }
