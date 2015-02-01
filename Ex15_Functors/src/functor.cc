@@ -3,11 +3,11 @@
 
 // this is a functor
 class Multiplier {
-  double x;
+  double x_;
 
- public:
-  Multiplier(double x) : x{x} {}
-  double operator()(double y) { return x * y; }
+public:
+  Multiplier(double x) : x_{x} {}
+  double operator()(double y) { return x_ * y; }
 };
 
 int main() {
