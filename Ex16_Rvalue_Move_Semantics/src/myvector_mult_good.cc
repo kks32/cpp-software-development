@@ -51,7 +51,10 @@ class Myvector {
 
 template <class T>
 Myvector<T> operator*(const Myvector<T>& a, const Myvector<T>& b) {
-  if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
+  if (a.get_size() != b.get_size()) {
+    std::cout << "Vectors are not of the same size" << std::endl;
+    std::exit(EXIT_FAILURE);
+  }
   Myvector<T> res(a.get_size());
   for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
 
@@ -71,7 +74,7 @@ void make_vector(const Myvector<T>& a, const Myvector<T>& b,
 int main() {
   Myvector<double> v{100000};
   Myvector<double> v2{v};
-  Myvector<double> v3{v * v2};
+  Myvector<double> v3{v*v2};
   // std::vector<Myvector<double>> vec;
   // for (int i = 0; i < 1000; ++i) make_vector(v, v2, vec);
   // std::cout << "Size of vector - vec : " << vec.size() << std::endl;

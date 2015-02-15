@@ -22,8 +22,8 @@ class Myvector {
       elems[i] = newvector.elems[i];
   }
 
-  // Assignment operator
-  Myvector<T>& operator=(const Myvector<T>& newvector) {
+  // Assignment & move operator
+  Myvector<T>& operator=(Myvector<T> newvector) {
     size = newvector.size;
     elems = new T[newvector.size];
     for (int i = 0; i < newvector.get_size(); ++i)
@@ -67,9 +67,7 @@ int main() {
   Myvector<double> v{10};
   std::cout << "Elements in v" << std::endl;
   for (const auto& x : v) std::cout << x << std::endl;
-  std::cout << "Address of res: " << &v << std::endl;
-  Myvector<double> v2{std::move(v)};
-  std::cout << "Address of res: " << &v2 << std::endl;
+  Myvector<double> v2 = std::move(v);
   std::cout << "Elements in v2" << std::endl;
   for (const auto& x : v2) std::cout << x << std::endl;
   std::cout << "How about the size of v :" << v.get_size() << std::endl;
