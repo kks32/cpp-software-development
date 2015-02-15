@@ -31,6 +31,7 @@ class Myvector {
     return *this;
   }
 
+
   T& operator[](int index) const { return elems[index]; }
   int get_size() const { return size; }
   T* begin() { return elems; }       // begin iterator
@@ -41,12 +42,18 @@ class Myvector {
   int size;
 };
 
+template <class T>
+Myvector<T> operator*(const Myvector<T>& a, const Myvector<T>& b) {
+  if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
+  Myvector<T> res(a.get_size());
+  for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
+  return res;
+}
+
 int main() {
-  Myvector<double> v{10};
-  std::cout << "Elements in v" << std::endl;
-  for (const auto& x : v) std::cout << x << std::endl;
+  Myvector<double> v{100000};
   Myvector<double> v2{v};
-  std::cout << "Elements in v2" << std::endl;
-  for (const auto& x : v2) std::cout << x << std::endl;
-  std::cout << "How about the size of v now:" << v.get_size() << std::endl;
+  Myvector<double> v3{v};
+  v3 = v * v2;
+  //  for (const auto& x : v3) std::cout << x << std::endl;
 }
