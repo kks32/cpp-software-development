@@ -54,13 +54,13 @@ Myvector<T> operator*(const Myvector<T>& a, const Myvector<T>& b) {
   if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
   Myvector<T> res(a.get_size());
   for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
+
   return std::move(res);  // return statements are usually an rvalue
 }
 
-
 template <class T>
 void make_vector(const Myvector<T>& a, const Myvector<T>& b,
-                 std::vector<Myvector<T>> &nv) {
+                 std::vector<Myvector<T>>& nv) {
   if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
 
   Myvector<T> res(a.get_size());

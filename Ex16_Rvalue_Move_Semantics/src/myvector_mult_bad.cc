@@ -47,6 +47,7 @@ Myvector<T> operator*(const Myvector<T>& a, const Myvector<T>& b) {
   if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
   Myvector<T> res(a.get_size());
   for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
+  std::cout << "Address of res: " << &res << std::endl;
   return res;
 }
 
@@ -65,6 +66,7 @@ int main() {
   Myvector<double> v2{v};
   Myvector<double> v3{v};
   v3 = v * v2;
+  std::cout << "Address of v3: " << &v3 << std::endl;
   // std::vector<Myvector<double>> vec;
   // for (int i = 0; i < 1000; ++i) make_vector(v, v2, vec);
   // std::cout << "Size of vector - vec : " << vec.size() << std::endl;
