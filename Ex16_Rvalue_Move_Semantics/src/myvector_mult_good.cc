@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <vector>
 
 // Class MyVector
 template <class T>
@@ -53,12 +54,25 @@ Myvector<T> operator*(const Myvector<T>& a, const Myvector<T>& b) {
   if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
   Myvector<T> res(a.get_size());
   for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
-  return std::move(res);
+  return std::move(res);  // return statements are usually an rvalue
+}
+
+
+template <class T>
+void make_vector(const Myvector<T>& a, const Myvector<T>& b,
+                 std::vector<Myvector<T>> &nv) {
+  if (a.get_size() != b.get_size()) std::exit(EXIT_FAILURE);
+
+  Myvector<T> res(a.get_size());
+  for (int i = 0; i != a.get_size(); ++i) res[i] = a[i] * b[i];
+  nv.push_back(std::move(res));
 }
 
 int main() {
   Myvector<double> v{100000};
   Myvector<double> v2{v};
   Myvector<double> v3{v * v2};
-  //for (const auto& x : v3) std::cout << x << std::endl;
+  // std::vector<Myvector<double>> vec;
+  // for (int i = 0; i < 1000; ++i) make_vector(v, v2, vec);
+  // std::cout << "Size of vector - vec : " << vec.size() << std::endl;
 }
