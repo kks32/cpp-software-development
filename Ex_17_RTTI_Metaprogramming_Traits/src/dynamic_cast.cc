@@ -37,7 +37,11 @@ int main() {
 
   BaseA* ptr = &aobj;
 
-  decltype(ptr) ptr2 = &cobj; //BaseA* ptr
+  BaseA* ptr2 = &cobj;  // BaseA* ptr
+
+  // auto* ptr2 = &cobj; //BaseA* ptr
+
+  // decltype(ptr) ptr2 = &cobj; //BaseA* ptr
 
   dynamic_cast_function(ptr);
 
