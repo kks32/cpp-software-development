@@ -41,3 +41,7 @@ Large scale C++ Software development tutorials
 [Ex17: RTTI, Traits and Policy](https://github.com/kks32/cpp-software-development/tree/master/Ex17_RTTI_Traits)
 
 [Ex18: Tuples, Variadic templates and template metaprogramming](https://github.com/kks32/cpp-software-development/tree/master/Ex18_Tuple_Variadic_Templates_Metaprogramming)
+
+[Ex18: Lazy evaluation and Reference counting](https://github.com/kks32/cpp-software-development/tree/master/Ex19_Lazy_Evaluation_Reference_Counting)
+
+[Ex20: Metaclasses and Reflection](https://github.com/kks32/cpp-software-development/tree/master/Ex20_Metaclasses_Reflection)
