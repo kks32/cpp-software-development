@@ -45,3 +45,7 @@ Large scale C++ Software development tutorials
 [Ex18: Lazy evaluation and Reference counting](https://github.com/kks32/cpp-software-development/tree/master/Ex19_Lazy_Evaluation_Reference_Counting)
 
 [Ex20: Metaclasses and Reflection](https://github.com/kks32/cpp-software-development/tree/master/Ex20_Metaclasses_Reflection)
+
+[Ex21: Name Lookup and Interface](https://github.com/kks32/cpp-software-development/tree/master/Ex21_Name_Lookup_Interface)
+
+[Ex22: C++ Quiz](https://github.com/kks32/cpp-software-development/tree/master/Ex22_C++_Quiz)
